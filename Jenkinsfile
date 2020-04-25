@@ -7,7 +7,7 @@ pipeline {
 			steps {
 				withAWS(region:'ap-south-1', credentials:'capstone_aws_credentials') {
 					sh '''
-						~/.local/bin/aws eks --region ap-south-1 update-kubeconfig --name capstonecluster
+						aws eks --region ap-south-1 update-kubeconfig --name capstonecluster
 					'''
 				}
 			}
