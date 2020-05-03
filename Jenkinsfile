@@ -12,7 +12,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						sudo docker build -t suhask1/udacitycapstone .
+						sudo -s ./docker build -t suhask1/udacitycapstone .
 					'''
 				}
 			}
@@ -22,8 +22,8 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-						sudo docker push suhask1/udacitycapstone
+						sudo -s ./docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+						sudo -s ./docker push suhask1/udacitycapstone
 					'''
 				}
 			}
