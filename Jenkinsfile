@@ -29,7 +29,7 @@ pipeline {
 			}
 		}
 
-		/*stage('Set current kubectl context') {
+		stage('Set current kubectl context') {
 			steps {
 				withAWS(region:'ap-south-1', credentials:'capstone_aws_credentials') {
 					sh '''
@@ -37,7 +37,7 @@ pipeline {
 					'''
 				}
 			}
-		}*/
+		}
 
 		stage('Deploy blue container') {
 			steps {
