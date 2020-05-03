@@ -11,7 +11,7 @@ pipeline {
 						--name capstonecluster \
 						--version 1.13 \
 						--nodegroup-name standard-workers \
-						--node-type t2.small \
+						--node-type t2.micro \
 						--nodes 2 \
 						--nodes-min 1 \
 						--nodes-max 3 \
@@ -26,7 +26,7 @@ pipeline {
 		}
 		
 		
-		/*stage('Create conf file cluster') {
+		stage('Create conf file cluster') {
 			steps {
 				withAWS(region:'ap-south-1', credentials:'capstone_aws_credentials') {
 					sh '''
@@ -34,7 +34,7 @@ pipeline {
 					'''
 				}
 			}
-		}*/
+		}
 
 	}
 }
